@@ -1,6 +1,6 @@
 
 # Sets the path to the parent directory of RR classes
-setwd("C:\\Users\\ellaz\\OneDrive\\Desktop\\RRcourse\\RRcourse2023\\6. Coding and documentation")
+setwd("Z:\\File folders\\Teaching\\Reproducible Research\\2023\\Repository\\RRcourse2023\\6. Coding and documentation")
 
 #   Import data from the O*NET database, at ISCO-08 occupation level.
 # The original data uses a version of SOC classification, but the data we load here
@@ -16,45 +16,45 @@ task_data = read.csv("Data\\onet_tasks.csv")
 # read employment data from Eurostat
 # These datasets include quarterly information on the number of workers in specific
 # 1-digit ISCO occupation categories. (Check here for details: https://www.ilo.org/public/english/bureau/stat/isco/isco08/)
-####################
-library(dplyr)
-# read in all sheets from Excel file and store in a list
-sheets <- c("ISCO1", "ISCO2", "ISCO3", "ISCO4", "ISCO5", "ISCO6", "ISCO7", "ISCO8", "ISCO9")
-isco_data <- lapply(sheets, function(x) read_excel("Data\\Eurostat_employment_isco.xlsx", sheet = x))
+library(readxl)                     
 
-# create a column to store the occupation categories
-for(i in seq_along(isco_data)) {
-  isco_data[[i]]$ISCO <- i
-}
+isco1 <- read_excel("Data\\Eurostat_employment_isco.xlsx", sheet="ISCO1")
+isco2 <- read_excel("Data\\Eurostat_employment_isco.xlsx", sheet="ISCO2")
+isco3 <- read_excel("Data\\Eurostat_employment_isco.xlsx", sheet="ISCO3")
+isco4 <- read_excel("Data\\Eurostat_employment_isco.xlsx", sheet="ISCO4")
+isco5 <- read_excel("Data\\Eurostat_employment_isco.xlsx", sheet="ISCO5")
+isco6 <- read_excel("Data\\Eurostat_employment_isco.xlsx", sheet="ISCO6")
+isco7 <- read_excel("Data\\Eurostat_employment_isco.xlsx", sheet="ISCO7")
+isco8 <- read_excel("Data\\Eurostat_employment_isco.xlsx", sheet="ISCO8")
+isco9 <- read_excel("Data\\Eurostat_employment_isco.xlsx", sheet="ISCO9")
 
-# combine all sheets into one dataframe
-all_isco_data <- do.call(rbind, isco_data)
+# We will focus on three countries, but perhaps we could clean this code to allow it
+# to easily run for all the countries in the sample?
 
-# combine all data into one large file
-all_data <- all_isco_data
+# This will calculate worker totals in each of the chosen countries.
+total_Belgium = isco1$Belgium + isco2$Belgium + isco3$Belgium + isco4$Belgium + isco5$Belgium + isco6$Belgium + isco7$Belgium + isco8$Belgium + isco9$Belgium
+total_Spain = isco1$Spain + isco2$Spain + isco3$Spain + isco4$Spain + isco5$Spain + isco6$Spain + isco7$Spain + isco8$Spain + isco9$Spain
+total_Poland = isco1$Poland + isco2$Poland + isco3$Poland + isco4$Poland + isco5$Poland + isco6$Poland + isco7$Poland + isco8$Poland + isco9$Poland
 
-##############################################################################
+# Let's merge all these datasets. We'll need a column that stores the occupation categories:
+isco1$ISCO <- 1
+isco2$ISCO <- 2
+isco3$ISCO <- 3
+isco4$ISCO <- 4
+isco5$ISCO <- 5
+isco6$ISCO <- 6
+isco7$ISCO <- 7
+isco8$ISCO <- 8
+isco9$ISCO <- 9
 
-# Group the data by TIME and aggregate each column for the same TIME values
-grouped <- all_data %>% 
-  group_by(TIME) %>% 
-  summarize(
-    total_Belgium = sum(Belgium),
-    total_Czechia = sum(Czechia),
-    total_Denmark = sum(Denmark),
-    total_Spain = sum(Spain),
-    total_Italy = sum(Italy),
-    total_Lithuania = sum(Lithuania),
-    total_Poland = sum(Poland),
-    total_Finland = sum(Finland),
-    total_Sweden = sum(Sweden)
-  )
+# and this gives us one large file with employment in all occupations.
+all_data <- rbind(isco1, isco2, isco3, isco4, isco5, isco6, isco7, isco8, isco9)
 
-
-
-# Merge the original and aggregated data
-all_data <- merge(all_data, grouped, by = "TIME")
-
+# We have 9 occupations and the same time range for each, so we an add the totals by
+# adding a vector that is 9 times the previously calculated totals
+all_data$total_Belgium <- c(total_Belgium, total_Belgium, total_Belgium, total_Belgium, total_Belgium, total_Belgium, total_Belgium, total_Belgium, total_Belgium) 
+all_data$total_Spain <- c(total_Spain, total_Spain, total_Spain, total_Spain, total_Spain, total_Spain, total_Spain, total_Spain, total_Spain) 
+all_data$total_Poland <- c(total_Poland, total_Poland, total_Poland, total_Poland, total_Poland, total_Poland, total_Poland, total_Poland, total_Poland) 
 
 # And this will give us shares of each occupation among all workers in a period-country
 all_data$share_Belgium = all_data$Belgium/all_data$total_Belgium
@@ -83,6 +83,7 @@ aggdata$isco08 <- NULL
 # 4.A.4.a.1	Interpreting the Meaning of Information for Others
 
 #Let's combine the data.
+library(dplyr)
 
 combined <- left_join(all_data, aggdata, by = c("ISCO" = "isco08_1dig"))
 
@@ -91,7 +92,7 @@ combined <- left_join(all_data, aggdata, by = c("ISCO" = "isco08_1dig"))
 # for each country. Standardisation -> getting the mean to 0 and std. dev. to 1.
 # Let's do this for each of the variables that interests us:
 
-# install.packages("Hmisc")
+#install.packages("Hmisc")
 library(Hmisc)
 
 # first task item
