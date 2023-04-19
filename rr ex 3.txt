@@ -1,0 +1,198 @@
+l_ellazova@instance-1:~$ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.9  1.3 167484 12940 ?        Ss   08:33   0:02 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    08:33   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   08:33   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   08:33   0:00 [rcu_par_gp]
+root           5  0.0  0.0      0     0 ?        I<   08:33   0:00 [slub_flushwq]
+root           6  0.0  0.0      0     0 ?        I<   08:33   0:00 [netns]
+root           7  0.0  0.0      0     0 ?        I    08:33   0:00 [kworker/0:0-events]
+root           8  0.0  0.0      0     0 ?        I<   08:33   0:00 [kworker/0:0H-events_highpr
+root           9  0.0  0.0      0     0 ?        I    08:33   0:00 [kworker/u4:0-loop4]
+root          10  0.0  0.0      0     0 ?        I<   08:33   0:00 [mm_percpu_wq]
+root          11  0.0  0.0      0     0 ?        S    08:33   0:00 [rcu_tasks_rude_]
+root          12  0.0  0.0      0     0 ?        S    08:33   0:00 [rcu_tasks_trace]
+root          13  0.0  0.0      0     0 ?        S    08:33   0:00 [ksoftirqd/0]
+root          14  0.0  0.0      0     0 ?        I    08:33   0:00 [rcu_sched]
+root          15  0.0  0.0      0     0 ?        S    08:33   0:00 [migration/0]
+root          16  0.0  0.0      0     0 ?        S    08:33   0:00 [idle_inject/0]
+root          17  0.0  0.0      0     0 ?        I    08:33   0:00 [kworker/0:1-events]
+root          18  0.0  0.0      0     0 ?        S    08:33   0:00 [cpuhp/0]
+root          19  0.0  0.0      0     0 ?        S    08:33   0:00 [cpuhp/1]
+root          20  0.0  0.0      0     0 ?        S    08:33   0:00 [idle_inject/1]
+root          21  0.1  0.0      0     0 ?        S    08:33   0:00 [migration/1]
+root          22  0.0  0.0      0     0 ?        S    08:33   0:00 [ksoftirqd/1]
+root          23  0.0  0.0      0     0 ?        I    08:33   0:00 [kworker/1:0-events]
+root          24  0.0  0.0      0     0 ?        I<   08:33   0:00 [kworker/1:0H-events_highpr
+root          25  0.0  0.0      0     0 ?        S    08:33   0:00 [kdevtmpfs]
+root          26  0.0  0.0      0     0 ?        I<   08:33   0:00 [inet_frag_wq]
+root          27  0.0  0.0      0     0 ?        S    08:33   0:00 [kauditd]
+root          28  0.0  0.0      0     0 ?        I    08:33   0:00 [kworker/1:1-cgroup_destroy
+root          29  0.0  0.0      0     0 ?        S    08:33   0:00 [khungtaskd]
+root          30  0.0  0.0      0     0 ?        S    08:33   0:00 [oom_reaper]
+root          31  0.0  0.0      0     0 ?        I<   08:33   0:00 [writeback]
+root          32  0.0  0.0      0     0 ?        S    08:33   0:00 [kcompactd0]
+root          33  0.0  0.0      0     0 ?        SN   08:33   0:00 [ksmd]
+root          34  0.0  0.0      0     0 ?        SN   08:33   0:00 [khugepaged]
+root          80  0.0  0.0      0     0 ?        I<   08:33   0:00 [kintegrityd]
+root          81  0.0  0.0      0     0 ?        I<   08:33   0:00 [kblockd]
+root          82  0.0  0.0      0     0 ?        I<   08:33   0:00 [blkcg_punt_bio]
+root          83  0.0  0.0      0     0 ?        I<   08:33   0:00 [tpm_dev_wq]
+root          84  0.0  0.0      0     0 ?        I<   08:33   0:00 [ata_sff]
+root          85  0.0  0.0      0     0 ?        I<   08:33   0:00 [md]
+root          86  0.0  0.0      0     0 ?        I<   08:33   0:00 [edac-poller]
+root          87  0.0  0.0      0     0 ?        I<   08:33   0:00 [devfreq_wq]
+root          88  0.0  0.0      0     0 ?        S    08:33   0:00 [watchdogd]
+root          89  0.0  0.0      0     0 ?        I    08:33   0:00 [kworker/u4:1-events_power_
+root          90  0.0  0.0      0     0 ?        I<   08:33   0:00 [kworker/1:1H-kblockd]
+root          92  0.0  0.0      0     0 ?        S    08:33   0:00 [kswapd0]
+root          93  0.0  0.0      0     0 ?        S    08:33   0:00 [ecryptfs-kthrea]
+root          95  0.0  0.0      0     0 ?        I<   08:33   0:00 [kthrotld]
+root          96  0.0  0.0      0     0 ?        I<   08:33   0:00 [acpi_thermal_pm]
+root          97  0.0  0.0      0     0 ?        S    08:33   0:00 [scsi_eh_0]
+root          98  0.0  0.0      0     0 ?        I<   08:33   0:00 [scsi_tmf_0]
+root          99  0.0  0.0      0     0 ?        I<   08:33   0:00 [nvme-wq]
+root         100  0.0  0.0      0     0 ?        I<   08:33   0:00 [nvme-reset-wq]
+root         101  0.0  0.0      0     0 ?        I<   08:33   0:00 [nvme-delete-wq]
+root         102  0.0  0.0      0     0 ?        I<   08:33   0:00 [vfio-irqfd-clea]
+root         103  0.0  0.0      0     0 ?        I    08:33   0:00 [kworker/u4:2]
+root         104  0.0  0.0      0     0 ?        I<   08:33   0:00 [kworker/0:1H-kblockd]
+root         105  0.0  0.0      0     0 ?        I<   08:33   0:00 [mld]
+root         106  0.0  0.0      0     0 ?        I<   08:33   0:00 [ipv6_addrconf]
+root         107  0.0  0.0      0     0 ?        I    08:33   0:00 [kworker/0:2-events]
+root         116  0.0  0.0      0     0 ?        I<   08:33   0:00 [kstrp]
+root         119  0.0  0.0      0     0 ?        I<   08:33   0:00 [zswap-shrink]
+root         120  0.0  0.0      0     0 ?        I<   08:33   0:00 [kworker/u5:0]
+root         127  0.0  0.0      0     0 ?        I<   08:33   0:00 [charger_manager]
+root         128  0.0  0.0      0     0 ?        S    08:33   0:00 [jbd2/sda1-8]
+root         129  0.0  0.0      0     0 ?        I<   08:33   0:00 [ext4-rsv-conver]
+root         130  0.0  0.0      0     0 ?        I    08:33   0:00 [kworker/1:2-events]
+root         131  0.0  0.0      0     0 ?        S    08:33   0:00 [hwrng]
+root         170  0.1  1.1  39668 11336 ?        S<s  08:33   0:00 /lib/systemd/systemd-journa
+root         192  0.0  0.0      0     0 ?        I    08:33   0:00 [kworker/u4:3-events_unboun
+root         197  0.0  0.0      0     0 ?        I    08:33   0:00 [kworker/1:3-events]
+root         204  0.0  0.0      0     0 ?        I<   08:33   0:00 [kaluad]
+root         206  0.0  0.0      0     0 ?        I<   08:33   0:00 [kmpath_rdacd]
+root         208  0.0  0.0      0     0 ?        I<   08:33   0:00 [kmpathd]
+root         209  0.0  0.0      0     0 ?        I<   08:33   0:00 [kmpath_handlerd]
+root         212  0.0  2.7 289348 27100 ?        SLsl 08:33   0:00 /sbin/multipathd -d -s
+root         222  0.1  0.6  22992  6260 ?        Ss   08:33   0:00 /lib/systemd/systemd-udevd
+root         237  0.0  0.0      0     0 ?        I<   08:33   0:00 [cryptd]
+root         281  0.0  0.0      0     0 ?        I    08:33   0:00 [kworker/0:3-events]
+root         283  0.0  0.0      0     0 ?        I    08:33   0:00 [kworker/0:4-cgroup_destroy
+root         320  0.0  0.0      0     0 ?        I    08:33   0:00 [kworker/u4:4-events_power_
+systemd+     437  0.0  0.8  16252  8184 ?        Ss   08:33   0:00 /lib/systemd/systemd-networ
+systemd+     439  0.0  1.2  25260 12404 ?        Ss   08:33   0:00 /lib/systemd/systemd-resolv
+root         499  0.0  0.0      0     0 ?        I    08:34   0:00 [kworker/u4:5]
+message+     569  0.0  0.5   8664  5000 ?        Ss   08:34   0:00 @dbus-daemon --system --add
+root         574  0.0  2.1 1238276 21084 ?       Ssl  08:34   0:00 /usr/bin/google_osconfig_ag
+root         584  0.0  1.9  33124 18836 ?        Ss   08:34   0:00 /usr/bin/python3 /usr/bin/n
+syslog       592  0.0  0.5 222400  5684 ?        Ssl  08:34   0:00 /usr/sbin/rsyslogd -n -iNON
+root         598  0.9  4.5 1022692 44996 ?       Ssl  08:34   0:02 /usr/lib/snapd/snapd
+root         721  0.0  1.6 1305612 15904 ?       Ssl  08:34   0:00 /usr/bin/google_guest_agent
+root         799  0.0  2.1 110200 21548 ?        Ssl  08:34   0:00 /usr/bin/python3 /usr/share
+root         819  0.0  0.8 235440  8240 ?        Ssl  08:34   0:00 /usr/libexec/polkitd --no-d
+root         826  0.0  0.1   6216  1112 ttyS0    Ss+  08:34   0:00 /sbin/agetty -o -p -- \u --
+root         830  0.0  0.1   6172  1088 tty1     Ss+  08:34   0:00 /sbin/agetty -o -p -- \u --
+root         835  0.0  0.8  15424  8900 ?        Ss   08:34   0:00 sshd: /usr/sbin/sshd -D [li
+root         842  0.0  0.7  15364  7496 ?        Ss   08:34   0:00 /lib/systemd/systemd-logind
+root         852  0.0  0.2   7284  2780 ?        Ss   08:34   0:00 /usr/sbin/cron -f -P
+_chrony     1378  0.0  0.3  18916  3368 ?        S    08:34   0:00 /usr/sbin/chronyd -F 1
+_chrony     1379  0.0  0.0  10588   520 ?        S    08:34   0:00 /usr/sbin/chronyd -F 1
+root        1511  0.0  1.1  17044 10988 ?        Ss   08:35   0:00 sshd: l_ellazova [priv]
+l_ellaz+    1514  0.0  0.9  17076  9552 ?        Ss   08:35   0:00 /lib/systemd/systemd --user
+l_ellaz+    1515  0.0  0.5 170396  4956 ?        S    08:35   0:00 (sd-pam)
+l_ellaz+    1591  0.0  0.8  17180  8004 ?        S    08:35   0:00 sshd: l_ellazova@pts/0
+l_ellaz+    1593  0.0  0.5   9208  5276 pts/0    Ss   08:35   0:00 -bash
+l_ellaz+    1612  0.0  0.3  10460  3376 pts/0    R+   08:37   0:00 ps aux
+l_ellazova@instance-1:~$ ps aux | grep cpu
+root          10  0.0  0.0      0     0 ?        I<   08:33   0:00 [mm_percpu_wq]
+root          18  0.0  0.0      0     0 ?        S    08:33   0:00 [cpuhp/0]
+root          19  0.0  0.0      0     0 ?        S    08:33   0:00 [cpuhp/1]
+root         107  0.0  0.0      0     0 ?        I    08:33   0:00 [kworker/0:2-mm_percpu_wq]
+root         197  0.0  0.0      0     0 ?        I    08:33   0:00 [kworker/1:3-mm_percpu_wq]
+l_ellaz+    1629  0.0  0.2   7004  2192 pts/0    R+   08:39   0:00 grep --color=auto cpu
+l_ellazova@instance-1:~$ sudo tail -3 /var/log/syslog
+Apr 19 08:39:01 instance-1 systemd[1]: Starting Download data for packages that failed at package install time...
+Apr 19 08:39:01 instance-1 systemd[1]: update-notifier-download.service: Deactivated successfully.
+Apr 19 08:39:01 instance-1 systemd[1]: Finished Download data for packages that failed at package install time.
+l_ellazova@instance-1:~$ cd $(find /etc -type d -exec test -r '{}' \; -print -quit)
+l_ellazova@instance-1:/etc$ pwd
+/etc
+l_ellazova@instance-1:/etc$ 
+l_ellazova@instance-1:/etc$ head -3 /path/to/file
+head: cannot open '/path/to/file' for reading: No such file or directory
+l_ellazova@instance-1:/etc$ head -3
+
+
+kill
+kill
+ 
+
+l_ellazova@instance-1:/etc$ find /path/to/directory -type f -exec head -3 {} \;
+find: ‘/path/to/directory’: No such file or directory
+l_ellazova@instance-1:/etc$ ls
+NetworkManager                 groff            mke2fs.conf             rpc
+PackageKit                     group            modprobe.d              rsyslog.conf
+X11                            group-           modules                 rsyslog.d
+adduser.conf                   grub.d           modules-load.d          screenrc
+alternatives                   gshadow          mtab                    security
+apparmor                       gshadow-         multipath               selinux
+apparmor.d                     gss              multipath.conf          services
+apport                         hdparm.conf      nanorc                  shadow
+apt                            host.conf        needrestart             shadow-
+bash.bashrc                    hostname         netconfig               shells
+bash_completion                hosts            netplan                 skel
+bash_completion.d              hosts.allow      network                 sos
+bindresvport.blacklist         hosts.deny       networkd-dispatcher     ssh
+binfmt.d                       init.d           networks                ssl
+boto.cfg                       initramfs-tools  newt                    subgid
+byobu                          inputrc          nftables.conf           subgid-
+ca-certificates                iproute2         nsswitch.conf           subuid
+ca-certificates.conf           iscsi            nvme                    subuid-
+ca-certificates.conf.dpkg-old  issue            opt                     sudo.conf
+chrony                         issue.net        os-release              sudo_logsrvd.conf
+cloud                          kernel           overlayroot.conf        sudoers
+console-setup                  kernel-img.conf  overlayroot.local.conf  sudoers.d
+cron.d                         landscape        pam.conf                sysctl.conf
+cron.daily                     ld.so.cache      pam.d                   sysctl.d
+cron.hourly                    ld.so.conf       passwd                  systemd
+cron.monthly                   ld.so.conf.d     passwd-                 terminfo
+cron.weekly                    ldap             perl                    timezone
+crontab                        legal            pm                      tmpfiles.d
+cryptsetup-initramfs           libaudit.conf    polkit-1                ubuntu-advantage
+crypttab                       libblockdev      pollinate               ucf.conf
+dbus-1                         libnl-3          ppp                     udev
+debconf.conf                   locale.alias     profile                 ufw
+debian_version                 locale.gen       profile.d               update-manager
+default                        localtime        protocols               update-motd.d
+deluser.conf                   logcheck         python3                 update-notifier
+depmod.d                       login.defs       python3.10              usb_modeswitch.conf
+dhcp                           logrotate.conf   rc0.d                   usb_modeswitch.d
+dpkg                           logrotate.d      rc1.d                   vim
+e2scrub.conf                   lsb-release      rc2.d                   vmware-tools
+ec2_version                    lvm              rc3.d                   vtrgb
+environment                    machine-id       rc4.d                   wgetrc
+ethertypes                     magic            rc5.d                   xattr.conf
+fstab                          magic.mime       rc6.d                   xdg
+fuse.conf                      manpath.config   rcS.d                   zsh_command_not_found
+gai.conf                       mdadm            resolv.conf
+google_instance_id             mime.types       rmt
+l_ellazova@instance-1:/etc$ cd apt
+l_ellazova@instance-1:/etc/apt$ pwd
+/etc/apt
+l_ellazova@instance-1:/etc/apt$ head -n 3 apt
+head: cannot open 'apt' for reading: No such file or directory
+l_ellazova@instance-1:/etc/apt$ head -n 3 syslog
+head: cannot open 'syslog' for reading: No such file or directory
+l_ellazova@instance-1:/etc/apt$ ls
+apt.conf.d  auth.conf.d  keyrings  preferences.d  sources.list  sources.list.d  trusted.gpg.d
+l_ellazova@instance-1:/etc/apt$ head -n 3 apt.conf.d
+head: error reading 'apt.conf.d': Is a directory
+l_ellazova@instance-1:/etc/apt$ head -n 3 sources.list.d
+head: error reading 'sources.list.d': Is a directory
+l_ellazova@instance-1:/etc/apt$ head -n 3 sources.list
+## Note, this file is written by cloud-init on first boot of an instance
+## modifications made here will not survive a re-bundle.
+## if you wish to make changes you can:
+l_ellazova@instance-1:/etc/apt$ 
