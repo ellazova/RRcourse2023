@@ -1,0 +1,83 @@
+---
+title: "Holmes Quarto"
+subtitle: "YAML, rendering and parameters"
+author: "Leyla Ellazova"
+date: today
+date-format: short
+format: 
+  html: 
+    toc: true
+    toc-depth: 2
+    toc-expand: 3
+    toc-title: Contents
+    toc-location: body
+    smooth-scroll: true
+    number-sections: true
+    number-depth: 3
+    theme:
+      light: Cosmo
+      dark: Cyborg
+  docx: default
+execute:
+  echo: fenced
+  warning: false
+  cache: true 
+  freeze: true
+---
+
+## A brief Description
+
+_Sherlock_ is a British mystery crime drama television series based on _Sir Arthur Conan Doyle_'s _Sherlock Holmes_ detective stories. Created by _Steven Moffat_ and _Mark Gatiss_, it stars _Benedict Cumberbatch_ as _Sherlock Holmes_ and _Martin Freeman_ as Doctor _John Watson_. Thirteen episodes have been produced, with four three-part series airing from 2010 to 2017 and a special episode that aired on 1 January 2016. The series is set in the present day, while the one-off special features a Victorian period fantasy resembling the original Holmes stories. _Sherlock_ is produced by the British network _BBC_, along with _Hartswood Films_, with _Moffat, Gatiss, Sue Vertue and Rebecca Eaton_ serving as executive producers. The series is supported by the American station _WGBH-TV_ Boston for its Masterpiece anthology series on PBS, where it also airs in the _United States_. The series is primarily filmed in _Cardiff, Wales, with North Gower Street_ in _London_ used for exterior shots of _Holmes and Watson_'s 221B Baker Street residence.
+
+![Holmes and Watson in 221B Baker Street](https://www.pluggedin.com/wp-content/uploads/2020/01/Sherlock_Large.jpg.jpeg)
+
+According to overnight data provided by the Broadcasters' Audience Research Board (BARB), the highest overnight figure from the first series of Sherlock was 7.5 million for the opening episode, "A Study in Pink", whereas the second series averaged over 8 million viewers.[129] The three episodes of series two were the three most watched programmes on iPlayer, the BBC's video-on-demand service, between January and April 2012. Its opening episode, "A Scandal in Belgravia", attracted controversy from the tabloid newspaper Daily Mail, which reported that Irene Adler's nude scene early in the episode had been met with disapproval from some viewers who were concerned that it had been shown before the 9:00 pm watershed hour, before which adult-orientated content is not supposed to air. Some critics also took exception to Moffat's treatment of Irene Adler, arguing that she was sexualised, an argument rejected by others, including Moffat. The series' conclusion, "The Reichenbach Fall", in which Sherlock fakes his suicide by jumping from St Bartholomew's Hospital, led to speculation on forums, social networking sites and in newspaper articles about its resolution.
+
+The third series became the UK's most watched drama series since 2001. An average 11.82 million people watched the series, with about 12.72 million tuning in for the first episode. The 2016 New Year's Day special drew 11.64 million viewers. The fourth series opened with 11.3 million viewers for the first episode, but dropped to 5.9 million viewers by the final episode of the fourth series, the lowest overnight ever recorded by the show.
+
+## A graph of the season-to-season changes in viewership
+
+In this graph below, we see the number of viewerships (in millions) over the series.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+views <- data.frame(series = c("1","2","3","special","4"),
+                    uk_views = c(8.37, 10.23, 11.82, 11.64, 10.00))
+
+library(ggplot2)
+
+plot<-ggplot(views,
+             aes(x = series, y = uk_views)) + 
+  geom_bar(stat = "identity", color = "blue", fill = "lightblue")+
+  geom_text(aes(label = signif(uk_views)), nudge_y = 3, color = "black")+
+  ggtitle("The number of viewerships season to season")
+plot
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ratings <- data.frame(
+  E1 = c(8.9,9.4,8.4,8.0),
+  E2 = c(7.9,8.3,8.8,7.6),
+  E3 = c(9.0,9.6,8.9,9.1),
+  E4 = c(8.7,0,9.2,8.1),
+  row.names=c('S1', 'S2', 'S3', 'S4')
+)
+
+ratings
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+library(gplots)
+
+
+data <- as.matrix(ratings)
+
+# plot the heatmap with values
+heatmap.2(data, dendrogram = "none", trace = "none", col = heat.colors(100), 
+          main = "My Heatmap", 
+          cellnote = data, notecol = "black", notecex = 0.8)
+```
+
+
+The most rated episode is the Episode 3 of Season 2 (9.6), meanwhile the least rated episode is the Episode 2 Season 4 (7.6).
+
+**THANK YOU!**
