@@ -1,0 +1,42 @@
+---
+title: "Automation of GOT"
+author: "Leyla Ellazova"
+format: html
+editor: visual
+---
+
+## Game Of Thrones
+
+```{r}
+file_path <- "C:/Users/le444831/Desktop/RRcourse2023/Data/season_1.RData"
+season_number <- ifelse(grepl("season_", file_path), gsub(".*season_(\\d+).*", "\\1", file_path), "Unknown")
+heading <- ifelse(season_number != "Unknown", paste0("Season ", season_number, " summary"), "Unknown")
+
+cat(heading)
+
+load(file_path)
+
+
+```
+
+```{r}
+plot(season_data$viewers, type="l", col="red", lwd=5, xlab = "Episode number", ylab = "1st day TV viewers in the US (millions)")
+```
+
+```{r}
+avg_viewership <- mean(season_data$viewers)
+
+```
+
+```{r}
+filtered_data <- subset(season_data, viewers > avg_viewership, select = c(no_season, title, directed_by))
+
+```
+
+```{r}
+library(knitr)
+
+kable(filtered_data, caption = "Seasons with Viewership Above Average",
+      col.names = c("Season", "Title", "Directed By"))
+
+```
