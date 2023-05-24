@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Leyla Ellazova">
+<meta name="dcterms.date" content="2023-05-24">
 
 <title>Automation of GOT</title>
 <style>
@@ -97,71 +98,102 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="Automation of GOT_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Automation of GOT_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="Automation of GOT_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
 
-<body class="fullcontent">
+<body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Automation of GOT</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
 
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Automation of GOT</h1>
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Leyla Ellazova </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 24, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#game-of-thrones" id="toc-game-of-thrones" class="nav-link active" data-scroll-target="#game-of-thrones"><span class="toc-section-number">1</span>  Game Of Thrones</a></li>
+  </ul>
+</nav>
 </div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Leyla Ellazova </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<section id="game-of-thrones" class="level2">
-<h2 class="anchored" data-anchor-id="game-of-thrones">Game Of Thrones</h2>
+<section id="game-of-thrones" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="game-of-thrones"><span class="header-section-number">1</span> Game Of Thrones</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="ot">&lt;-</span> <span class="st">"C:/Users/le444831/Desktop/RRcourse2023/Data/season_1.RData"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>season_number <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">grepl</span>(<span class="st">"season_"</span>, file_path), <span class="fu">gsub</span>(<span class="st">".*season_(</span><span class="sc">\\</span><span class="st">d+).*"</span>, <span class="st">"</span><span class="sc">\\</span><span class="st">1"</span>, file_path), <span class="st">"Unknown"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>heading <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(season_number <span class="sc">!=</span> <span class="st">"Unknown"</span>, <span class="fu">paste0</span>(<span class="st">"Season "</span>, season_number, <span class="st">" summary"</span>), <span class="st">"Unknown"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(heading)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="fu">paste0</span>(<span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">le444831</span><span class="sc">\\</span><span class="st">Desktop</span><span class="sc">\\</span><span class="st">RRcourse2023</span><span class="sc">\\</span><span class="st">Data</span><span class="sc">\\</span><span class="st">season_"</span>, params<span class="sc">$</span>season, <span class="st">".RData"</span>))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>avg_viewership <span class="ot">&lt;-</span> <span class="fu">mean</span>(season_data<span class="sc">$</span>viewers)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>nameofseason <span class="ot">&lt;-</span> season_data<span class="sc">$</span>title[season_data<span class="sc">$</span>viewers <span class="sc">==</span> <span class="fu">max</span>(season_data<span class="sc">$</span>viewers)]</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>descriptionofseason <span class="ot">&lt;-</span> season_data<span class="sc">$</span>description[season_data<span class="sc">$</span>viewers <span class="sc">==</span> <span class="fu">max</span>(season_data<span class="sc">$</span>viewers)]</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"The most popular episode of the season was"</span>, nameofseason, <span class="st">"in which:"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, descriptionofseason)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Season 1 summary</code></pre>
+<pre><code>The most popular episode of the season was "Valar Morghulis" in which: 
+ 
+ Joffrey sets Sansa aside to marry Margaery Tyrell and ally with the Tyrell family. Tyrion fears for his and Shae's safety after Tywin is named Hand of the King. Melisandre gives Stannis a new hope. Brienne kills Stark soldiers after they recognize Jaime. Catelyn fails to dissuade Robb from marrying Talisa, breaking his promise to wed Walder Frey's daughter. In Qarth, inside the House of the Undying, Daenerys enters a simulacrum of a destroyed Iron Throne room, then is reunited with what appears to be Khal Drogo and their infant son. Knowing it is unreal, she leaves and successfully retrieves her dragons, who fatally burn Pree, who tries to imprison her. She seals Daxos and her traitorous servant inside his empty vault and claims his other possessions, with which Jorah will pay for a small ship. In Winterfell, Theon wants his men to fight Robb's army, but they knock him unconscious and leave; Winterfell is torched. Fatally wounded Maester Luwin convinces Osha to escape with Brandon and Rickon to the Wall for Jon's protection. After Arya, Hot Pie, and Gendry escape Harrenhal, H'ghar gives Arya a non-monetary coin he says can be used to find him in Braavos. Before her, he magically changes his face. North of the Wall, Halfhand forces Jon to kill him to prove his loyalty to the Wildlings. An army of White Walkers and dead men surrounds the Fist of the First Men; Sam hides, watching in horror as they pass.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(file_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(season_data<span class="sc">$</span>viewers, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">col=</span><span class="st">"red"</span>, <span class="at">lwd=</span><span class="dv">5</span>, <span class="at">xlab =</span> <span class="st">"Episode number"</span>, <span class="at">ylab =</span> <span class="st">"1st day TV viewers in the US (millions)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(season_data<span class="sc">$</span>viewers, <span class="at">type=</span><span class="st">"l"</span>, <span class="at">col=</span><span class="st">"red"</span>, <span class="at">lwd=</span><span class="dv">5</span>, <span class="at">xlab =</span> <span class="st">"Episode number"</span>, <span class="at">ylab =</span> <span class="st">"1st day TV viewers in the US (millions)"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Automation-of-GOT_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+<p><img src="Automation-of-GOT_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>avg_viewership <span class="ot">&lt;-</span> <span class="fu">mean</span>(season_data<span class="sc">$</span>viewers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>filtered_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(season_data, viewers <span class="sc">&gt;</span> avg_viewership, <span class="at">select =</span> <span class="fu">c</span>(no_season, title, directed_by))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>filtered_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(season_data, viewers <span class="sc">&gt;</span> avg_viewership, <span class="at">select =</span> <span class="fu">c</span>(no_season, title, directed_by))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'knitr' was built under R version 4.2.3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(filtered_data, <span class="at">caption =</span> <span class="st">"Seasons with Viewership Above Average"</span>,</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Season"</span>, <span class="st">"Title"</span>, <span class="st">"Directed By"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(filtered_data, <span class="at">caption =</span> <span class="st">"Seasons with Viewership Above Average"</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Season"</span>, <span class="st">"Title"</span>, <span class="st">"Directed By"</span>))</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <caption>Seasons with Viewership Above Average</caption>
@@ -175,27 +207,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">“The North Remembers”</td>
+<td style="text-align: left;">Alan Taylor</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">9</td>
 <td style="text-align: left;">5</td>
-<td style="text-align: left;">“The Wolf and the Lion”</td>
-<td style="text-align: left;">Brian Kirk</td>
+<td style="text-align: left;">“The Ghost of Harrenhal”</td>
+<td style="text-align: left;">David Petrarca</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">“The Old Gods and the New”</td>
+<td style="text-align: left;">David Nutter</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">15</td>
 <td style="text-align: left;">8</td>
-<td style="text-align: left;">“The Pointy End”</td>
-<td style="text-align: left;">Daniel Minahan</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">17</td>
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">“Baelor”</td>
+<td style="text-align: left;">“The Prince of Winterfell”</td>
 <td style="text-align: left;">Alan Taylor</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">19</td>
 <td style="text-align: left;">10</td>
-<td style="text-align: left;">“Fire and Blood”</td>
+<td style="text-align: left;">“Valar Morghulis”</td>
 <td style="text-align: left;">Alan Taylor</td>
 </tr>
 </tbody>
@@ -343,4 +381,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="Automation of GOT_files/libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
