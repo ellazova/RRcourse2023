@@ -1,0 +1,49 @@
+---
+title: "Automation of GOT"
+author: "Leyla Ellazova"
+date: today
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    smooth-scroll: true
+number-sections: true
+number-depth: 2
+title-block-banner: true
+execute:
+  echo: fenced
+params:
+   season: 2
+---
+
+## Game Of Thrones
+
+```{r}
+load(paste0("C:\\Users\\le444831\\Desktop\\RRcourse2023\\Data\\season_", params$season, ".RData"))
+```
+
+```{r}
+avg_viewership <- mean(season_data$viewers)
+
+nameofseason <- season_data$title[season_data$viewers == max(season_data$viewers)]
+descriptionofseason <- season_data$description[season_data$viewers == max(season_data$viewers)]
+
+cat("The most popular episode of the season was", nameofseason, "in which:", "\n", "\n", descriptionofseason)
+```
+
+```{r}
+plot(season_data$viewers, type="l", col="red", lwd=5, xlab = "Episode number", ylab = "1st day TV viewers in the US (millions)")
+```
+
+```{r}
+filtered_data <- subset(season_data, viewers > avg_viewership, select = c(no_season, title, directed_by))
+
+```
+
+```{r}
+library(knitr)
+
+kable(filtered_data, caption = "Seasons with Viewership Above Average",
+      col.names = c("Season", "Title", "Directed By"))
+
+```
