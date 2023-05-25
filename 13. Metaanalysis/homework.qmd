@@ -1,6 +1,6 @@
 ---
 title: "Metaanalysis in R"
-author: "Wojciech Hardy"
+author: "Leyla Ellazova"
 date: today
 format:  
   html:
